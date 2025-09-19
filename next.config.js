@@ -1,6 +1,6 @@
 module.exports = {
   images: {
-    domains: ['gravatar.com']
+    domains: ['gravatar.com', 'picimg.picktimehub.cn']
   },
   eslint: {
     // dirs: ['components', 'layouts', 'lib', 'pages']
