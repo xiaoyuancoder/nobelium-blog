@@ -2,7 +2,7 @@ const BLOG = {
   title: '拾光-分享技术、生活、思考',
   author: '拾光',
   email: 'i@craigary.net',
-  link: 'https://nobelium.vercel.app',
+  link: 'https://www.picktimehub.cn',
   description: '分享技术、生活、思考',
   lang: 'zh-CN', // ['en-US', 'zh-CN', 'zh-HK', 'zh-TW', 'ja-JP', 'es-ES']
   timezone: 'Asia/Shanghai', // Notion 文章的日期将按此时区解析。更多选项见 https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
