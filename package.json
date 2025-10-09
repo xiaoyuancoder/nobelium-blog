@@ -16,8 +16,8 @@
     "node": "20.x"
   },
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
+    "dev": "set NODE_OPTIONS=--max-old-space-size=4096 && next dev",
+    "build": "set NODE_OPTIONS=--max-old-space-size=4096 && next build",
     "start": "next start",
     "lint": "next lint",
     "postbuild": "next-sitemap --config next-sitemap.config.js"

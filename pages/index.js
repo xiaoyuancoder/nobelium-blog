@@ -7,17 +7,29 @@ import { getAllPosts } from '@/lib/notion'
 import { useConfig } from '@/lib/config'
 
 export async function getStaticProps () {
-  const posts = await getAllPosts({ includePages: false })
-  const postsToShow = posts.slice(0, clientConfig.postsPerPage)
-  const totalPosts = posts.length
-  const showNext = totalPosts > clientConfig.postsPerPage
-  return {
-    props: {
-      page: 1, // current page is 1
-      postsToShow,
-      showNext
-    },
-    revalidate: 1
+  try {
+    const posts = await getAllPosts({ includePages: false }) || [];
+    const postsToShow = posts.slice(0, clientConfig.postsPerPage);
+    const totalPosts = posts.length;
+    const showNext = totalPosts > clientConfig.postsPerPage;
+    return {
+      props: {
+        page: 1, // current page is 1
+        postsToShow,
+        showNext
+      },
+      revalidate: 1
+    };
+  } catch (error) {
+    console.error('getStaticProps error:', error.message);
+    return {
+      props: {
+        page: 1,
+        postsToShow: [],
+        showNext: false
+      },
+      revalidate: 1
+    }
   }
 }
 

@@ -16,34 +16,54 @@ const Page = ({ postsToShow, page, showNext }) => {
 }
 
 export async function getStaticProps (context) {
-  const { page } = context.params // Get Current Page No.
-  const posts = await getAllPosts({ includePages: false })
-  const postsToShow = posts.slice(
-    config.postsPerPage * (page - 1),
-    config.postsPerPage * page
-  )
-  const totalPosts = posts.length
-  const showNext = page * config.postsPerPage < totalPosts
-  return {
-    props: {
-      page, // Current Page
-      postsToShow,
-      showNext
-    },
-    revalidate: 1
+  try {
+    const { page } = context.params; // Get Current Page No.
+    const posts = await getAllPosts({ includePages: false }) || [];
+    const postsToShow = posts.slice(
+      config.postsPerPage * (page - 1),
+      config.postsPerPage * page
+    );
+    const totalPosts = posts.length;
+    const showNext = page * config.postsPerPage < totalPosts;
+    return {
+      props: {
+        page, // Current Page
+        postsToShow,
+        showNext
+      },
+      revalidate: 1
+    }
+  } catch (error) {
+    console.error('getStaticProps error:', error.message);
+    return {
+      props: {
+        page: context.params.page,
+        postsToShow: [],
+        showNext: false
+      },
+      revalidate: 1
+    };
   }
 }
 
 export async function getStaticPaths () {
-  const posts = await getAllPosts({ includePages: false })
-  const totalPosts = posts.length
-  const totalPages = Math.ceil(totalPosts / config.postsPerPage)
-  return {
-    // remove first page, we 're not gonna handle that.
-    paths: Array.from({ length: totalPages - 1 }, (_, i) => ({
-      params: { page: '' + (i + 2) }
-    })),
-    fallback: true
+  try {
+    const posts = await getAllPosts({ includePages: false }) || [];
+    const totalPosts = posts.length;
+    const totalPages = Math.ceil(totalPosts / config.postsPerPage);
+    return {
+  // remove first page, we 're not gonna handle that.
+      paths: totalPages > 1 ? Array.from({ length: totalPages - 1 }, (_, i) => ({
+        params: { page: '' + (i + 2) }
+      })) : [],
+      fallback: true
+    };
+  } catch (error) {
+    console.warn('getStaticPaths error:', error.message);
+    return {
+      paths: [],
+      fallback: true
+    }
   }
 }
 

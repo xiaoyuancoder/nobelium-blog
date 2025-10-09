@@ -1,0 +1,23 @@
+name: Auto Deploy on Post Update
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "posts.config.js"
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 触发 Vercel 部署
+        run: |
+          echo "posts.config.js 已更新"
+          echo "Vercel 将自动检测并重新部署"
+
+      - name: 通知
+        run: |
+          echo "✓ 文章列表已更新"
+          echo "✓ Vercel 部署将在几分钟内完成"

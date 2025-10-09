@@ -71,28 +71,43 @@ export default function BlogPost ({ post, blockMap, emailHash }) {
 }
 
 export async function getStaticPaths () {
-  const posts = await getAllPosts({ includePages: true })
-  return {
-    paths: posts.map(row => `${clientConfig.path}/${row.slug}`),
-    fallback: true
+  try {
+    const posts = await getAllPosts({ includePages: true })
+    const paths = (posts || []).map(row => `${clientConfig.path}/${row.slug}`)
+    return {
+      paths,
+      fallback: true
+    };
+  } catch (error) {
+    console.warn('getStaticPaths error:', error.message);
+    // 返回空路径，让所有页面都使用 fallback
+    return {
+      paths: [],
+      fallback: true
+    }
   }
 }
 
 export async function getStaticProps ({ params: { slug } }) {
-  const posts = await getAllPosts({ includePages: true })
-  const post = posts.find(t => t.slug === slug)
+  try {
+    const posts = await getAllPosts({ includePages: true })
+    const post = (posts || []).find(t => t.slug === slug)
 
-  if (!post) return { notFound: true }
+    if (!post) return { notFound: true }
 
-  const blockMap = await getPostBlocks(post.id)
-  const emailHash = createHash('md5')
-    .update(clientConfig.email)
-    .digest('hex')
-    .trim()
-    .toLowerCase()
+    const blockMap = await getPostBlocks(post.id);
+    const emailHash = createHash('md5')
+      .update(clientConfig.email)
+      .digest('hex')
+      .trim()
+      .toLowerCase()
 
-  return {
-    props: { post, blockMap, emailHash },
-    revalidate: 1
+    return {
+      props: { post, blockMap, emailHash },
+      revalidate: 1
+    };
+  } catch (error) {
+    console.error('getStaticProps error:', error.message);
+    return { notFound: true }
   }
 }

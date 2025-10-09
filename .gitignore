@@ -38,3 +38,20 @@ yarn-error.log*
 public/robots.txt
 public/sitemap.xml
 .env*.local
+
+# 包含敏感信息的文件（不要上传）
+zapier-code-ready.js
+.env
+
+# 测试和诊断脚本（本地使用）
+get-post-ids.mjs
+test-*.mjs
+diagnose.mjs
+sync-posts.mjs
+
+# 批处理脚本（本地使用）
+*.bat
+
+# 临时文件夹
+09/
+10/
