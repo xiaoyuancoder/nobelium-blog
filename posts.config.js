@@ -7,7 +7,6 @@ module.exports = {
 
     // 手动添加的文章 ID 列表
     manualPostIds: [
-    '2871a5ec32f680a3a133c852408ddafe', // xxx测试 - 2025-10-09,
         '26d1a5ec32f680c1ad6ee9d775c87385', // Nobelium+Zapier+Vercel 构建一个属于自己的博客
         '2861a5ec32f680709903defcf682fbd4', // Cloud Code 基础的能技巧
         '2871a5ec32f6807ea125dd25d15e2a69', // Typescript 学习笔记 (一)
