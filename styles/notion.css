@@ -145,12 +145,14 @@ pre[class*='language-'] {
 }
 .notion-collection {
   @apply max-w-full;
+  @apply overflow-x-auto;
 }
 .notion-collection > .notion-collection-header {
   @apply px-0 !important;
 }
 .notion-collection > .notion-table {
-  @apply max-w-full !important;
+  @apply w-full !important;
+  min-width: max-content;
 }
 .notion-collection > .notion-table > .notion-table-view {
   @apply px-0 !important;
