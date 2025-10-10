@@ -157,6 +157,26 @@ pre[class*='language-'] {
 .notion-collection > .notion-table > .notion-table-view {
   @apply px-0 !important;
 }
+
+/* 强制表格完全展开 */
+.notion-table-view {
+  width: 100% !important;
+  min-width: max-content !important;
+  overflow-x: auto !important;
+}
+
+.notion-table-view > div {
+  min-width: max-content !important;
+}
+
+.notion-table-view .notion-table-row {
+  min-width: max-content !important;
+}
+
+.notion-table-view .notion-table-cell {
+  white-space: nowrap !important;
+  min-width: fit-content !important;
+}
 .notion-collection-view-type {
   @apply hidden;
 }
