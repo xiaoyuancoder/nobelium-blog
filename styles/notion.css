@@ -201,6 +201,27 @@ pre[class*='language-'] {
   min-width: fit-content !important;
   width: auto !important;
 }
+
+/* 包装器样式 */
+.notion-table-wrapper {
+  overflow-x: auto !important;
+  width: 100% !important;
+}
+
+.notion-table-wrapper .notion-collection {
+  min-width: max-content !important;
+  width: max-content !important;
+}
+
+.notion-table-wrapper .notion-collection .notion-table {
+  min-width: max-content !important;
+  width: max-content !important;
+}
+
+.notion-table-wrapper .notion-collection .notion-table-view {
+  min-width: max-content !important;
+  width: max-content !important;
+}
 .notion-collection-view-type {
   @apply hidden;
 }

@@ -131,6 +131,30 @@ export default function NotionRenderer (props) {
         .notion {
           --notion-font: ${font};
         }
+
+        /* 强制表格完全展开 */
+        .notion-collection .notion-table-view {
+          width: 100% !important;
+          min-width: max-content !important;
+          overflow-x: auto !important;
+          display: block !important;
+        }
+
+        .notion-collection .notion-table-view > div {
+          min-width: max-content !important;
+          width: max-content !important;
+        }
+
+        .notion-collection .notion-table-view .notion-table-row {
+          min-width: max-content !important;
+          width: max-content !important;
+        }
+
+        .notion-collection .notion-table-view .notion-table-cell {
+          white-space: nowrap !important;
+          min-width: fit-content !important;
+          width: auto !important;
+        }
         `}
       </style>
       <Renderer
