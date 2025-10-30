@@ -7,6 +7,7 @@ module.exports = {
 
     // 手动添加的文章 ID 列表
     manualPostIds: [
+    '29c1a5ec32f680578d5bd010c4d4d4a0', // Refactoring UI 第二章“层次就是一切” - 2025-10-30,
     '29b1a5ec32f680a59e2ffd10108b6f2a', // Refactoring UI - 第一章 从头开始-幽默的总结 - 2025-10-29,
     '2951a5ec32f6800aa11cdaf191ccd083', // React Hook Form API 详细中文文档 - 2025-10-23,
     '2931a5ec32f680eab615d966b344e7e0', // 前端项目构建-初始化项目 - 2025-10-21,
