@@ -7,6 +7,7 @@ module.exports = {
 
     // 手动添加的文章 ID 列表
     manualPostIds: [
+    '2a11a5ec32f6806da758fd089790958e', // React Query 查询的三阶段 - 2025-11-04,
     '2a11a5ec32f680498089fb8a15c22eb3', // 为什么要用 React query（清嗓子，扶了扶眼镜，开始敲键盘） - 2025-11-04,
     '29c1a5ec32f680578d5bd010c4d4d4a0', // Refactoring UI 第二章“层次就是一切” - 2025-10-30,
     '29b1a5ec32f680a59e2ffd10108b6f2a', // Refactoring UI - 第一章 从头开始-幽默的总结 - 2025-10-29,
