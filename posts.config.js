@@ -7,6 +7,7 @@ module.exports = {
 
     // 手动添加的文章 ID 列表
     manualPostIds: [
+    '2a21a5ec32f68020aab0d5e3fc9f7ada', // React Query 避免加载状态 - 2025-11-05,
     '2a21a5ec32f680b9a4b7f9f3ce40030a', // React Query 依赖查询 - 2025-11-05,
     '2a21a5ec32f6802b9ac9c92ae7733c62', // React Query 轮询 - 2025-11-05,
     '2a21a5ec32f680b1bc99fd7c58ddc041', // React Query 垃圾回收 - 2025-11-05,
