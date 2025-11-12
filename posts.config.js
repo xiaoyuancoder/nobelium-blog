@@ -7,6 +7,7 @@ module.exports = {
 
     // 手动添加的文章 ID 列表
     manualPostIds: [
+    '2a91a5ec32f680a0b31fd492b96a40e4', // 流(Stream)？听起来像是在看视频，其实差不多！ - 2025-11-12,
     '2a41a5ec32f680f39be1e8f9714a1d1a', // Immer 实战指南 - 2025-11-07,
     '2a31a5ec32f680919073c56f7b51ec93', // React Query 离线支持 - 2025-11-06,
     '2a21a5ec32f6807e8b1ffa67285b2e8a', // React Query 乐观更新 - 2025-11-05,
