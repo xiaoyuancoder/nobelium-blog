@@ -7,6 +7,7 @@ module.exports = {
 
     // 手动添加的文章 ID 列表
     manualPostIds: [
+    '2b01a5ec32f6806bb8bbcf2336453afd', // Connect中间件：让你的Node.js代码更优雅 🎭 - 2025-12-06,
     '2aa1a5ec32f680a1bcc9d9ad42186e55', // TCP 协议 - 网络世界的"靠谱快递员" 📦 - 2025-11-14,
     '2aa1a5ec32f680658d65f6b2c7060dc9', // React query 服务器端渲染 - 2025-11-13,
     '2a91a5ec32f680a0b31fd492b96a40e4', // 流(Stream)？听起来像是在看视频，其实差不多！ - 2025-11-12,
